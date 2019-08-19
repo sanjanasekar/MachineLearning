@@ -13,7 +13,10 @@ J = 0;
 % Instructions: Compute the cost of a particular choice of theta
 %               You should set J to the cost.
 
-
+m = size(X,1);                      % no of training samples 
+H_X = X * theta;                    % hypothesis h(x)
+SquareError = (H_X - y) .^ 2;       % [h(X) - y]^2
+J = 1/(2*m)*sum(SquareError);       % J(theta) = 1/2m * sum(h(x_i) -y_i)^ 2
 
 
 

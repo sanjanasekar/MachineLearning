@@ -17,14 +17,18 @@ for iter = 1:num_iters
     %       of the cost function (computeCostMulti) and gradient here.
     %
 
+    % if theta_j is the parameter for feature x_j 
+    %then the computation is done using the following expression
+    %theta_j := theta_j - alpha * (1/m) [sum(h(x_i) - y_i)] * x_j
 
 
 
 
 
-
-
-
+    h_X = X * theta;
+    hX_y_DIFF = h_X - y; 
+    newX = hX_y_DIFF' * X;
+    theta = theta - ((alpha/m) * newX');
 
 
     % ============================================================
